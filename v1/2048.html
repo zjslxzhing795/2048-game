@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2048</title>
+    <link rel=stylesheet type="text/css" href="2048.css"/>
+</head>
+<body>
+<div id="landing">
+    <span>登陆</span>
+    <a href="#">注册</a>
+</div>
+<div id="item">
+    <div>2048</div>
+    <div>4*4</div>
+</div>
+<div id="score">
+    <div>分数</div>
+    <div class="score">0</div>
+</div>
+<div id="high_score">
+    <div>最高分数</div>
+    <div class="high_score">0</div>
+</div>
+<div id="button">
+    <button onclick="re_game()">重新开始</button>
+</div>
+</div>
+<div id="Board">
+    <div class="grid-0-0 grid"></div>
+    <div class="grid-0-1 grid"></div>
+    <div class="grid-0-2 grid"></div>
+    <div class="grid-0-3 grid"></div>
+    <div class="grid-1-0 grid"></div>
+    <div class="grid-1-1 grid"></div>
+    <div class="grid-1-2 grid"></div>
+    <div class="grid-1-3 grid"></div>
+    <div class="grid-2-0 grid"></div>
+    <div class="grid-2-1 grid"></div>
+    <div class="grid-2-2 grid"></div>
+    <div class="grid-2-3 grid"></div>
+    <div class="grid-3-0 grid"></div>
+    <div class="grid-3-1 grid"></div>
+    <div class="grid-3-2 grid"></div>
+    <div class="grid-3-3 grid"></div>
+</div>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="2048.js"></script>
+</body>
+</html>
