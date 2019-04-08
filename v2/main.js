@@ -29,10 +29,10 @@ var gridContainerWidth = 0.92 * documentWidth;
 var cellSideLength = 0.18 * documentWidth;
 var cellSpace = 0.04 * documentWidth;
 var board = [];
-var startx;
-var starty;
-var endx;
-var endy;
+var startX;
+var startY;
+var endX;
+var endY;
 
 $(document).ready(function () {
     prepareForMobile();
@@ -46,7 +46,8 @@ function prepareForMobile() {
         cellSpace = 20;
         cellSideLength = 100;
     }else{
-        $('#Board').css('margin-top', '10px');
+        $('#Board').css({'margin-top': '10px','margin-left':'15px'});
+        $('#left').css({'margin-top':'0px','margin-left':'15px'});
     }
 
     $('#Board').css('width', gridContainerWidth - 2 * cellSpace);
@@ -157,50 +158,50 @@ $(document).keydown(function (event) {
 });
 
 document.addEventListener('touchstart',function(event){
-    event.preventDefault();
-    startx=event.touches[0].pageX;
-    starty=event.touches[0].pageY;
+    // event.preventDefault();
+    startX=event.touches[0].pageX;
+    startY=event.touches[0].pageY;
 });
 
-document.addEventListener();
+// document.addEventListener();
 
 document.addEventListener('touchend',function(event){
 
     event.preventDefault();
-    endx=event.changedTouches[0].pageX;
-    endy=event.changedTouches[0].pageY;
+    endX=event.changedTouches[0].pageX;
+    endY=event.changedTouches[0].pageY;
 
-    var deltax=endx-startx;
-    var deltay=endy-starty;
+    var deltaX=endX-startX;
+    var deltaY=endY-startY;
 
-    if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
+    if(Math.abs(deltaX)<0.3*documentWidth&&Math.abs(deltaY)<0.3*documentWidth){
         return ;
     }
-    if(Math.abs(deltax)>Math.abs(deltay)){
-        if(deltax>0){
+    if(Math.abs(deltaX)>Math.abs(deltaY)){
+        if(deltaX>0){
             if(moveRight()){
-                setTimeout("generateOneNumber()",210);
+                setTimeout("game.generateOneNumber()",210);
                 setTimeout("checkGameOver()",300);
             }
 
         }else{
             if(moveLeft()){
-                setTimeout("generateOneNumber()",210);
+                setTimeout("game.generateOneNumber()",210);
                 setTimeout("checkGameOver()",300);
             }
 
         }
     }else{
-        if(deltay>0){
+        if(deltaY>0){
             if(moveDown()){
-                setTimeout("generateOneNumber()",210);
+                setTimeout("game.generateOneNumber()",210);
                 setTimeout("checkGameOver()",300);
             }
 
         }else{
 
             if(moveUp()){
-                setTimeout("generateOneNumber()",210);
+                setTimeout("game.generateOneNumber()",210);
                 setTimeout("checkGameOver()",300);
             }
 
